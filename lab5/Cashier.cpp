@@ -1,6 +1,6 @@
 #include "Cashier.h"
 
-Cashier::Cashier(unsigned int max_t) // new 
+Cashier::Cashier(unsigned int max_t) // new  new new
 {
     seatsamount = 5;
     max_tickets = max_t;
