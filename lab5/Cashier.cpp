@@ -1,25 +1,25 @@
 #include "Cashier.h"
 
-Cashier::Cashier(unsigned int max_t)
+Cashier::Cashier(unsigned int max_t) // new 
 {
     seatsamount = 5;
     max_tickets = max_t;
     alltickets = new ticket[max_tickets];
     emptyseats = new int[max_tickets];
     num_tickets = alltickets[0].checkamount();
-    cout << "\n Âûçâàí êîíñòðóêòîð êëàññà Cashier:";
-    cout << "\n âûäåëåíî îáúåêòîâ - " << max_tickets;
-    cout << "\n çàãðóæåíî áèëåòîâ -" << num_tickets;
+    cout << "\n Ã‚Ã»Ã§Ã¢Ã Ã­ ÃªÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° ÃªÃ«Ã Ã±Ã±Ã  Cashier:";
+    cout << "\n Ã¢Ã»Ã¤Ã¥Ã«Ã¥Ã­Ã® Ã®Ã¡ÃºÃ¥ÃªÃ²Ã®Ã¢ - " << max_tickets;
+    cout << "\n Ã§Ã Ã£Ã°Ã³Ã¦Ã¥Ã­Ã® Ã¡Ã¨Ã«Ã¥Ã²Ã®Ã¢ -" << num_tickets;
     cout << endl;
 }
 Cashier::~Cashier()
 {
-    cout << "\nÂûçâàí äåñòðóêòîð êëàññà Cashier:";
+    cout << "\nÃ‚Ã»Ã§Ã¢Ã Ã­ Ã¤Ã¥Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° ÃªÃ«Ã Ã±Ã±Ã  Cashier:";
     delete[] emptyseats;
     delete[] alltickets;
     max_tickets = 0;
     num_tickets = 0;
-    cout << " Âûäåëåííàÿ ïàìÿòü îñâîáîæäåíà" << endl;
+    cout << " Ã‚Ã»Ã¤Ã¥Ã«Ã¥Ã­Ã­Ã Ã¿ Ã¯Ã Ã¬Ã¿Ã²Ã¼ Ã®Ã±Ã¢Ã®Ã¡Ã®Ã¦Ã¤Ã¥Ã­Ã " << endl;
 }
 void Cashier::addTicket()
 {
@@ -30,13 +30,13 @@ void Cashier::addTicket()
     }
     else
     {
-        cout << "Äîñòèãíóò ïðåäåë êîëè÷åñòâà áèëåòîâ" << endl;
+        cout << "Ã„Ã®Ã±Ã²Ã¨Ã£Ã­Ã³Ã² Ã¯Ã°Ã¥Ã¤Ã¥Ã« ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã  Ã¡Ã¨Ã«Ã¥Ã²Ã®Ã¢" << endl;
     }
 }
 
 void Cashier::readfromfile()
 {
-    cout << " Íà÷àëîñü ÷òåíèå èç ôàéëà" << endl;
+    cout << " ÃÃ Ã·Ã Ã«Ã®Ã±Ã¼ Ã·Ã²Ã¥Ã­Ã¨Ã¥ Ã¨Ã§ Ã´Ã Ã©Ã«Ã " << endl;
     for (int i = 0; i < num_tickets; i++)
         alltickets[i] = alltickets[i].readTicketFromFile(i);
 }
@@ -45,25 +45,25 @@ void Cashier::task()
 {
     ticket d;
     cout << "=================================================================================" << endl;
-    cout << " Ââåäåíî ";
+    cout << " Ã‚Ã¢Ã¥Ã¤Ã¥Ã­Ã® ";
     cout << num_tickets;
-    cout << " áèëåòîâ " << endl;
+    cout << " Ã¡Ã¨Ã«Ã¥Ã²Ã®Ã¢ " << endl;
     cout << "=================================================================================" << endl;
     d.findMostExpensiveTicket(alltickets, num_tickets);
     cout << "=================================================================================" << endl;
     int coachNumber;
     int trainNumber;
-    cout << "Ââåäèòå íîìåð ðåéñà, ÷òîáû óçíàòü êîëè÷åñòâî ñâîáîäíûõ ìåñò: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã­Ã®Ã¬Ã¥Ã° Ã°Ã¥Ã©Ã±Ã , Ã·Ã²Ã®Ã¡Ã» Ã³Ã§Ã­Ã Ã²Ã¼ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã±Ã¢Ã®Ã¡Ã®Ã¤Ã­Ã»Ãµ Ã¬Ã¥Ã±Ã²: ";
     cin >> trainNumber;
-    cout << " Ââåäèòå äàòó ðåéñà: ";
+    cout << " Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¤Ã Ã²Ã³ Ã°Ã¥Ã©Ã±Ã : ";
     string depday;
     cin >> depday;
-    cout << "Ââåäèòå íîìåð âàãîíà, ÷òîáû óçíàòü êîëè÷åñòâî ñâîáîäíûõ ìåñò: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã­Ã®Ã¬Ã¥Ã° Ã¢Ã Ã£Ã®Ã­Ã , Ã·Ã²Ã®Ã¡Ã» Ã³Ã§Ã­Ã Ã²Ã¼ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã±Ã¢Ã®Ã¡Ã®Ã¤Ã­Ã»Ãµ Ã¬Ã¥Ã±Ã²: ";
     cin >> coachNumber;
     int availableSeats = d.countAvailableSeats(alltickets, num_tickets, coachNumber, trainNumber, depday);
     if ((seatsamount - availableSeats) < 0)
         availableSeats = seatsamount;
-    cout << "Êîëè÷åñòâî ñâîáîäíûõ ìåñò â âûáðàííîì âàãîíå: " << seatsamount - availableSeats << endl;
+    cout << "ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã±Ã¢Ã®Ã¡Ã®Ã¤Ã­Ã»Ãµ Ã¬Ã¥Ã±Ã² Ã¢ Ã¢Ã»Ã¡Ã°Ã Ã­Ã­Ã®Ã¬ Ã¢Ã Ã£Ã®Ã­Ã¥: " << seatsamount - availableSeats << endl;
 }
 
 void Cashier::deleteticket()
@@ -90,7 +90,7 @@ void Cashier::operator+=(const ticket& t)
     }
     else
     {
-        cout << "Äîñòèãíóò ïðåäåë êîëè÷åñòâà áèëåòîâ" << endl;
+        cout << "Ã„Ã®Ã±Ã²Ã¨Ã£Ã­Ã³Ã² Ã¯Ã°Ã¥Ã¤Ã¥Ã« ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã  Ã¡Ã¨Ã«Ã¥Ã²Ã®Ã¢" << endl;
     }
 }
 
@@ -101,13 +101,13 @@ void Cashier::operator-=(const ticket& t)
     {
         if (alltickets[h] == t)
         {
-            cout << "\n Áèëåò óäàëåí " << endl;
+            cout << "\n ÃÃ¨Ã«Ã¥Ã² Ã³Ã¤Ã Ã«Ã¥Ã­ " << endl;
             U = 1;
         }
         else
             if (U != 1 && h == num_tickets)
             {
-                cout << " Áèëåò ââåäåí íåâåðíî" << endl;
+                cout << " ÃÃ¨Ã«Ã¥Ã² Ã¢Ã¢Ã¥Ã¤Ã¥Ã­ Ã­Ã¥Ã¢Ã¥Ã°Ã­Ã®" << endl;
                 U = 0;
             }
         if (U == 1)
@@ -118,10 +118,10 @@ void Cashier::operator-=(const ticket& t)
 
 ostream& operator<<(ostream& stream, const Cashier& spisok)
 {
-    stream << " \n ÂÑÅ ÁÈËÅÒÛ:\n";
+    stream << " \n Ã‚Ã‘Ã… ÃÃˆÃ‹Ã…Ã’Ã›:\n";
     for (int i = 0; i < spisok.num_tickets; i++)
     {
-        stream << " ================= áèëåò # " << i + 1 << " =================\n";
+        stream << " ================= Ã¡Ã¨Ã«Ã¥Ã² # " << i + 1 << " =================\n";
         stream << spisok.alltickets[i] << endl;
     }
     return stream;
